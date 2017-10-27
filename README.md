@@ -5,3 +5,5 @@ Codes corresponding to the paper https://arxiv.org/abs/1708.03395
 by Jean Barbier, Florent Krzakala, Nicolas Macris, Léo Miolane, Lenka Zdeborová
 
 Perceptrondemo.ipynb is a julia demo that solve the variational problem for the replica free energy for the binary Perceptron, and plot the optimal error and generalization error.
+
+MatlabDemo contains a matlab code that runs AMP for the corresponding problem
