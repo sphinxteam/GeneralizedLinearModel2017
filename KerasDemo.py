@@ -1,12 +1,10 @@
 #This is a code showing how the data for figure 2 in https://arxiv.org/pdf/1708.03395.pdf have been generated
 #More precisly, the inset in the last figure
+#This is with 200 epochs, but 1000 epochs were used in the paper
 #This is a 2-layer network attempting to classify a rule
-
 
 import time
 import numpy as np
-from sklearn import svm
-from sklearn.datasets import load_svmlight_file
 from sklearn.cross_validation import train_test_split
 from sklearn.metrics import accuracy_score
 
@@ -63,6 +61,7 @@ for alpha in alpharange:
 
     model.compile(loss='categorical_crossentropy',optimizer=RMSprop(),metrics=['accuracy'])
 
+    #This is with 200 epochs. We used 1000 epochs in the article. It seems that it takes time to espace the non informative region in the landscape.
     history = model.fit(X_train_, y_train_K,batch_size=1000,epochs=200,verbose=1,validation_data=(X_valid, y_valid_K))
     score = model.evaluate(X_test, y_test_K)
     score2 = model.evaluate(X_train_, y_train_K)
